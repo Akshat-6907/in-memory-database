@@ -1,0 +1,11 @@
+def manual():
+    print("List of Commands :")
+    print("1. SET <key> <value> : updates key value pair in local memory.")
+    print("2. GET <key> : gets the value corresponding to the key , if in local memory.")
+    print("3. DEL <key> : deleted the key value pair from local memory.")
+    print("               (or deletes all pair if \"*\" in place of key)")
+    print("4. EXISTS <key> : checks if key exist in memory.")
+    print("5. SAVE <name> : dumps local memory into name .")
+    print("                 (if file does not exist, creates one)")
+    print("6. LOAD <name> : loads content of file name into local memory.")
+    print("7. QUIT : Finishes execution and exits the memory database.")
