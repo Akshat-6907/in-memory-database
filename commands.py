@@ -19,17 +19,18 @@ def command(parts, store):
             store[key] = {"value" : value , "expiry" : time.time() + seconds}
             print("Value set")
 
-    elif cmd == "GET" and len(parts) == 2:
-        key = parts[1]
-        if key in store :
-            entry = store[key]
-            if entry["expiry"] is not None and time.time() > entry["expiry"]:
-                del store[key]
-                print("ERROR : key not found")
+    elif cmd == "GET" and len(parts)>=2:
+        for i in range(1,len(parts)):
+            key = parts[i]
+            if key in store :
+                entry = store[key]
+                if entry["expiry"] is not None and time.time() > entry["expiry"]:
+                    del store[key]
+                    print("ERROR : key not found")
+                else :
+                    print(key," : " ,entry["value"])
             else :
-                print(entry["value"])
-        else :
-            print("ERROR : key not found")
+                print("ERROR : key not found")
 
     elif cmd == "DEL" and len(parts) == 2:
         if parts[1] in store and parts[1] != "*":

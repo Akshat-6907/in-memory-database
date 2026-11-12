@@ -3,6 +3,7 @@ def manual():
     print("1. SET <key> <value> : updates key value pair in local memory.")
     print("2. SETEX <key> <expiry> <value> : updates key value pair in local memory with an expiry time (in seconds).")
     print("3. GET <key> : gets the value corresponding to the key , if in local memory and not expired.")
+    print("               (OR GET <key1> <key2> <key3>... : for multiple keys)")
     print("4. DEL <key> : deletes the key value pair from local memory.")
     print("               (or deletes all pair if \"*\" in place of key)")
     print("5. EXISTS <key> : checks if key exist in memory and is not expired.")
